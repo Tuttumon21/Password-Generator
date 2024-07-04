@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 import string
+import pyperclip
 
 st.title("PASSWORD-#-GENERATOR")
 st.subheader("Generate a strong password")
@@ -59,4 +60,7 @@ def generate_password(length):
 
 if st.button("Generate Password"):
     password = generate_password(length)
-    st.write("Generated password:", password)
+    st.write("Generated password:")
+    Path = f'''{password}'''
+    st.code(Path, language="")
+    st.text("Now You Can Copy Password Easily")
